@@ -6,7 +6,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int numbers[1024];
+	int arr[1024];
 	int i = 0, j = 0;
 	listint_t *aux;
 
@@ -15,13 +15,11 @@ int is_palindrome(listint_t **head)
 	aux = *head;
 	if (!*head || (*head)->next == NULL)
 		return (1);
-
 	for (; aux; aux = aux->next, i++)
-		numbers[i] = aux->n;
-
-	for (; j < i; j++, i--)
+		arr[i] = aux->n;
+	for (; i > j; i--, j++)
 	{
-		if (numbers[j] != numbers[i - 1])
+		if (arr[i - 1] != arr[j])
 			return (0);
 	}
 	return (1);
