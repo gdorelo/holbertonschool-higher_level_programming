@@ -1,4 +1,8 @@
 *.~
 *main*
 _putchar.c
+<<<<<<< HEAD
 __pycache__
+=======
+__py*
+>>>>>>> 8e861936c7810b22e768dcda6a979251df9c8f51
