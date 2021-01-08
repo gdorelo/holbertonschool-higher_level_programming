@@ -1,0 +1,46 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+Importing the function from the module:
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Checking for module docstring:
+	>>> m = __import__("2-matrix_divided").__doc__
+	>>> len(m) > 1
+	True
+
+Checking for function docstring:
+	>>> f = __import__("2-matrix_divided").matrix_divided.__doc__
+    >>> len(f) > 1
+    True
+
+Check the type of the items in the list:
+    >>> matrix = [[3, "j", 3], [100, "asd", 3.2]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Check that the lenght of the lists in the matrix is equal:
+    >>> matrix = [[3, 2, 7, 8], [10, 3, 2]]
+    >>> matrix_divided(matrix, 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Check division by zero:
+    >>> matrix = [[3, 2, 7], [10, 3, 2]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Check non-float/integer passed as div:
+    >>> matrix = [[3, 2, 7], [10, 3, 2]]
+    >>> matrix_divided(matrix, "Holberton")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
