@@ -13,7 +13,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ equisde equisde """
-        return Rectangle(size, size)
+        return cls(size, size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
