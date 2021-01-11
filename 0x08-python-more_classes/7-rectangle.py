@@ -10,7 +10,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
-        type(self).number_of_instances += 1
+        Rectangle.number_of_instances += 1
     """getter width"""
     @property
     def width(self):
@@ -61,4 +61,4 @@ class Rectangle:
     """ delete my balls """
     def __del__(self):
         print("Bye rectangle...")
-        type(self).number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
