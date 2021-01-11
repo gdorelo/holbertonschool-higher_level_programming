@@ -75,6 +75,4 @@ class Rectangle:
     ''' equisde equisde '''
     @classmethod
     def square(cls, size=0):
-        cls.size = size
-        new_square = Rectangle(cls.size, cls.size)
-        return new_square
+        return cls(size, size)
