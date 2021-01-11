@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''square'''
+"""square"""
 
 
 class Square:
-    ''' what are these for? who knows '''
+    """ what are these for? who knows """
     pass

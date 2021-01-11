@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-'''
+"""
 This module defines a function called add_integer
-'''
+"""
 
 
 def add_integer(a, b=98):
-    '''
+    """
     a function that returns two integers
-    '''
+    """
     if type(a) is int or type(a) is float:
         pass
     else:
