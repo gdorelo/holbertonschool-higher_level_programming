@@ -31,6 +31,11 @@ class Rectangle:
         self.__height = height
         Rectangle.number_of_instances += 1
 
+    def __del__(self):
+        """ delete my balls """
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+
     @property
     def width(self):
         """getter width"""
@@ -70,23 +75,13 @@ class Rectangle:
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """print rectangle"""
-        my_rectangle = ""
-        if self.__width == 0 or self.__height == 0:
-            return my_rectangle
-        for s in range(self.__height):
-            my_rectangle += str(self.print_symbol)
-            for t in range(self.__width - 1):
-                my_rectangle += str(self.print_symbol)
-            if s < self.__height - 1:
-                my_rectangle += "\n"
-        return my_rectangle
+        """returns printable string representation of the rectangle"""
+        string = ""
+        if self.__width != 0 and self.__height != 0:
+            string += "\n".join(str(self.print_symbol) * self.__width
+                                for j in range(self.__height))
+        return string
 
     def __repr__(self):
         """ roberto """
         return 'Rectangle(%s, %s)' % (self.__width, self.__height)
-
-    def __del__(self):
-        """ delete my balls """
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
