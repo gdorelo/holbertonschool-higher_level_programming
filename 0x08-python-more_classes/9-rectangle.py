@@ -6,15 +6,18 @@ class Rectangle:
     """what are these for? who knows"""
     number_of_instances = 0
     print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """ initiate rectangle"""
         self.__width = width
         self.__height = height
         Rectangle.number_of_instances += 1
+
     @property
     def width(self):
         """getter width"""
         return self.__width
+
     @width.setter
     def width(self, value):
         """ setter width """
@@ -37,7 +40,6 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
 
     def area(self):
         """return the rectangle's area"""
