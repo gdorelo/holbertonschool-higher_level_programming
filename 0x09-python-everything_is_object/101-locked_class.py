@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-    """Locked class that only lets the user dynamically create the instance"""
+"""Locked class that only lets the user dynamically create the instance"""
 
 
 class LockedClass:
