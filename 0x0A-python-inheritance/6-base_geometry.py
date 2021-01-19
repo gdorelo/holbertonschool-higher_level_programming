@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""class BaseGeometry"""
+"""Contains the class BaseGeometry"""
 
 
 class BaseGeometry:
-    """an empty class"""
+    """A class with public attribute area"""
     def area(self):
-        '''juan'''
-        raise Exception("area() not implemented")
+        """raises an exception when called"""
+        raise Exception("area() is not implemented")
