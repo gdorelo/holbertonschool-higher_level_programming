@@ -1,25 +1,14 @@
 #!/usr/bin/python3
-''' Load, add and save  '''
-import json
-import sys
+''' load, add and save some cash '''
+import os
+from sys import argv
 
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
+arg_list = []
 
-def main():
-    ''' script that adds all arguments to a Python list,
-    and then saves them to a file '''
-    filename = "add_item.json"
-    l = sys.argv[1:]
-    with open(filename, mode='a', encoding="utf-8") as f:
-        pass
-    try:
-        l += load_from_json_file(filename)
-    except:
-        pass
-    save_to_json_file(l, filename)
-
-if __name__ == "__main__":
-    main()
+if os.path.exists("add_item.json"):
+    arg_list = load_from_json_file("add_item.json")
+save_to_json_file(arg_list + argv[1:], "add_item.json")
