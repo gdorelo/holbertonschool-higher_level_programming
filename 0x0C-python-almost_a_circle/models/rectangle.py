@@ -19,7 +19,7 @@ class Rectangle(Base):
     def width(self):
         ''' width getter '''
         return self.__width
-    
+
     @property
     def height(self):
         ''' height getter '''
@@ -82,3 +82,21 @@ class Rectangle(Base):
         for j in range(self.height):
             print(" " * self.x, end='')
             print("#" * self.width)
+
+    def __str__(self):
+        ''' informal string representation of the rectangle '''
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.__x,
+                                                                 self.__y,
+                                                                 self.__width,
+                                                                 self.__height)
+
+    def update(self, *args, **kwargs):
+        ''' updates rectangle's attributes '''
+        atrs = ['id', 'width', 'height', 'x', 'y']
+        if args and args[0] is not None:
+            for i in range(len(args)):
+                setattr(self, atrs[i], args[i])
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
