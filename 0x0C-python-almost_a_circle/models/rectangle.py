@@ -84,7 +84,7 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
-        ''' informal string representation of the rectangle '''
+        ''' informal string representation of a rectangle '''
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
                                                                  self.__x,
                                                                  self.__y,
@@ -100,3 +100,13 @@ class Rectangle(Base):
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        ''' returns the dictionary representation of a Rectangle '''
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return d
