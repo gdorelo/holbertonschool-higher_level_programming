@@ -83,7 +83,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        ''' classmethod load_from_file '''
+        ''' deserializes a list of Rectangles/Squares from csv  '''
         filename = cls.__name__ + ".csv"
         new_list = []
         try:
